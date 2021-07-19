@@ -1,14 +1,18 @@
 const express = require("express");
 const app = express();
 var CryptoJS = require("crypto-js");
-
+var cors = require('cors')
+app.use(cors())
 
 app.use(express.json());
 
 var data = "IoT Temperature and Humidity data sensor";
 
+
 app.get('/', (req, res) => {
-    res.send(data);
+    res.send({
+        "data": data
+    });
 })
 
 
@@ -31,7 +35,7 @@ app.post('/', (request, respond) => {
     var decoded_b64msg = new Buffer(plaintext, 'base64').toString('ascii');
     var decoded_msg = new Buffer(decoded_b64msg, 'base64').toString('ascii');
 
-    data = `<h1>The data is : ${decoded_msg} </h1>`
+    data = decoded_msg
     console.log(data)
     respond.sendStatus(200);
 });
