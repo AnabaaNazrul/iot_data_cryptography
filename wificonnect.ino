@@ -1,6 +1,8 @@
 #include <ESP8266WiFi.h>
 #include "DHT.h"
 #include <ESP8266HTTPClient.h>
+#include "AES.h"
+#include "base64.h"
 
 #define WIFI_SSID "OPPO A37f"
 #define WIFI_PASSWORD "123456789"
@@ -10,9 +12,6 @@
 DHT dht(DHTPIN, DHTTYPE);
 
 const char* serverName = "http://192.168.43.23:5000/";
-
-#include "AES.h"
-#include "base64.h"
 
 AES aes;
 
@@ -73,12 +72,11 @@ void loop() {
 
   String display = sensorUpdate();
 
-  //AES disiini
   char b64data[200];
     byte cipher[1000];
-    byte iv [N_BLOCK] ;
+    byte iv [N_BLOCK];
     
-    Serial.println("Let's encrypt:");
+    Serial.println("Encrypting....:");
     // Our AES key. Note that is the same that is used on the Node-Js side but as hex bytes.
     byte key[] = { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C };
     
@@ -90,6 +88,12 @@ void loop() {
 
     aes.set_key( key , sizeof(key));  // Get the globally defined key
     gen_iv( my_iv );                  // Generate a random IV
+
+    // Print the IV
+    base64_encode( b64data, (char *)my_iv, N_BLOCK);
+    Serial.println(" Your IV b64: " + String(b64data));
+
+    Serial.println(" Message: " + msg );
 
      int b64len = base64_encode(b64data, (char *)msg.c_str(),msg.length());
     Serial.println (" Message in B64: " + String(b64data) );
