@@ -20,6 +20,7 @@
             "includePath": [
                 "C:\\Users\\NAZRUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.0.1\\tools\\sdk\\include",
                 "C:\\Users\\NAZRUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.0.1\\tools\\sdk\\lwip2\\include",
+                "c:\\Users\\NAZRUL\\Desktop\\wificonnect\\output\\core",
                 "C:\\Users\\NAZRUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.0.1\\cores\\esp8266",
                 "C:\\Users\\NAZRUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.0.1\\variants\\nodemcu",
                 "C:\\Users\\NAZRUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.0.1\\libraries\\ESP8266WiFi\\src",
