@@ -1,0 +1,17 @@
+{
+  "name": "fyp",
+  "version": "1.0.0",
+  "description": "Express.js",
+  "main": "app.js",
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nazrul Amin",
+  "license": "ISC"
+}
