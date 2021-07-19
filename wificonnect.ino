@@ -92,6 +92,8 @@ void loop() {
     // Print the IV
     base64_encode( b64data, (char *)my_iv, N_BLOCK);
     Serial.println(" Your IV b64: " + String(b64data));
+    String data_iv = ",\"iv\" :\""+ String(b64data)+"\"";
+  
 
     Serial.println(" Message: " + msg );
 
@@ -122,7 +124,7 @@ void loop() {
       http.begin(client, serverName);
       
        http.addHeader("Content-Type", "application/json");
-       int httpResponseCode = http.POST("{\"data\":\""+String(b64data)+"\"}");
+       int httpResponseCode = http.POST("{\"data\":\""+String(b64data)+"\""+data_iv+"}");
      
       Serial.print("HTTP Response code: ");
       Serial.println(httpResponseCode);
