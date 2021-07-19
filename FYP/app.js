@@ -19,7 +19,7 @@ app.post('/', (request, respond) => {
     var esp8266_iv = text.iv;
 
     // The AES encryption/decryption key to be used.
-    var AESKey = '2B7E151628AED2A6ABF7158809CF4F3C';
+    
 
     var plain_iv = new Buffer(esp8266_iv, 'base64').toString('hex');
     var iv = CryptoJS.enc.Hex.parse(plain_iv);
