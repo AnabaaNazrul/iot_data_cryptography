@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iot data sensor</title>
+    <link rel="shortcut icon" type="image/png" href="">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
    <div>
        <h1>
-           <span id="content"></span>
+           Temperature and Humidity Data
        </h1>
+       <h2>
+           <span id="content"></span>
+       </h2>
+       <h3 id="currentDate">
+
+       </h3>
    </div>
    <script src="index.js"></script>
+   <script>
+       var currentdate = new Date();
+       document.getElementById("currentDate").innerHTML = currentdate;
+   </script>
 </body>
 </html>
