@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,25 +6,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iot data sensor</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@200&family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-   <div>
-       <h1>
-           Temperature and Humidity Data
-       </h1>
-       <h2>
-           <span id="content"></span>
-       </h2>
-       <h3 id="currentDate">
-
-       </h3>
+   <div class="headerWrapper">
+     <header class="header">
+       <img src="logo.jpg" alt="">
+       <nav class="navigation">
+          <p>Data</p>
+          <p>About</p>
+          <p>Sensor</p>
+       </nav>
+     </header>
    </div>
+   <div class="wrapper">
+      <h1>Temperature and Humidity Data</h1>
+       <div class="contentWrapper">
+         <div class="contentImg">
+           <img src="humid.jpg" alt="">
+           <img src="temp.jpg" alt="">
+         </div>
+         <span id="content"></span>
+       </div>
+       <p class="date"><span id="currentDate"></span></p>
+   </div>
+
+   <!--Start scripting -->
    <script src="index.js"></script>
    <script>
-       var currentdate = new Date();
+       var currentdate = new Date().toLocaleString();
+
        document.getElementById("currentDate").innerHTML = currentdate;
    </script>
+   <!-- End scripting -->
 </body>
 </html>
