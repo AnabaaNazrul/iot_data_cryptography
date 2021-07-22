@@ -59,8 +59,8 @@ String sensorUpdate(){
 
 
   
-  String result = "Humidity: " + String(h);
-  String result2 ="   Temperature: " + String(t);
+  String result = "Humidity: " + String(h)+"%";
+  String result2 ="   Temperature: " + String(t)+" Celsius";
 
   String result_last = result + result2;
 
@@ -126,7 +126,7 @@ void loop() {
        http.addHeader("Content-Type", "application/json");
        int httpResponseCode = http.POST("{\"data\":\""+String(b64data)+"\""+data_iv+"}");
      
-      Serial.print("HTTP Response code: ");
+      Serial.print("  HTTP Response code: ");
       Serial.println(httpResponseCode);
         
       http.end();
