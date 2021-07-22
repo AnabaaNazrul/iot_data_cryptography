@@ -83,7 +83,7 @@ void loop() {
     // The unitialized Initialization vector
     byte my_iv[N_BLOCK] = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
-    // Our message to encrypt. Static for this example.
+    // Our message to encrypt.
     String msg = sensorUpdate();
 
     aes.set_key( key , sizeof(key));  // Get the globally defined key
