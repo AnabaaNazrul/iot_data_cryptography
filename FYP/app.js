@@ -31,7 +31,7 @@ app.post('/', (request, respond) => {
     var decoded_b64msg = new Buffer(plaintext, 'base64').toString('ascii');
     var decoded_msg = new Buffer(decoded_b64msg, 'base64').toString('ascii');
 
-    data = `<h1>The data is : ${decoded_msg} </h1>`
+    data = `<h1>The data : ${decoded_msg} </h1>`
     console.log(data)
     respond.sendStatus(200);
 });

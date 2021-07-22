@@ -126,7 +126,7 @@ void loop() {
        http.addHeader("Content-Type", "application/json");
        int httpResponseCode = http.POST("{\"data\":\""+String(b64data)+"\""+data_iv+"}");
      
-      Serial.print("HTTP Response code: ");
+      Serial.print("  HTTP Response code: ");
       Serial.println(httpResponseCode);
         
       http.end();
